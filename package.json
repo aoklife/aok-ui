@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "stylus --compress src/app.styl --out dist/ --include nib/lib"
   },
   "author": "James O. Florentino <jamesflorentino@gmail.com> (http://jamesflorentino.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nib": "1.1.2",
+    "stylus": "0.54.5"
+  }
 }
