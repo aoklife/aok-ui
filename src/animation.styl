@@ -1,0 +1,12 @@
+@import './easing'
+
+.animate-pop
+  animation 1200ms $easeOutSine pop infinite
+
+@keyframes pop
+  from
+    transform scale(1.1)
+  50%
+    transform scale(1.3)
+  to
+    transform scale(1.1)

@@ -1,0 +1,10 @@
+@import '../mixins/media'
+@import './app-header'
+
+.app-outlet
+  padding-top $header-height
+  min-height 1000px
+
+  +mobile()
+    padding-left 1em
+    padding-right 1em

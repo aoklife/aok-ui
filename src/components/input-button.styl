@@ -1,0 +1,62 @@
+@import '../colors'
+@import '../mixins/typography'
+
+$font-bolder = 900
+
+
+button-size($fontsize, $height)
+  font-body($fontsize)
+  height $height
+  line-height $height
+
+button()
+  align-items center
+  appearance none
+  background $white
+  border 1px solid $black
+  border-radius 0
+  box-sizing border-box
+  color $black
+  crisp-text()
+  display inline-flex
+  font-heavy()
+  justify-content center
+  outline none
+  padding 0 1.25em
+  text-align center
+  transition 250ms
+  width auto
+
+  button-size(16px, 36px)
+
+  &.-block
+    width 100%
+
+  &.-disabled
+    opacity 0.5
+    border-color $gray
+
+  &:hover:not(.-disabled)
+    background $black
+    color $white
+
+  &.-big
+    button-size(24px, 48px)
+    border-width 2px
+
+  &.-inverted
+    background $black
+    color $white
+
+  &.-success
+    > .ion-icon
+      color $green
+
+  > .ion-icon
+    font-size 1.25em
+
+    &:last-child
+      margin-left 0.25em
+
+.input-button
+  button()

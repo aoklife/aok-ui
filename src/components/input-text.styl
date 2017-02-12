@@ -1,0 +1,137 @@
+@import '../colors'
+@import '../easing'
+@import '../vars'
+@import '../mixins/typography'
+
+$input-height = 48px
+$icon-width = 24px
+$padding-top = 14px
+
+input-field()
+  appearance none
+  background transparent
+  border 0px solid transparent
+  border-bottom 2px solid $gray
+  border-radius 0
+  box-sizing border-box
+  crisp-text()
+  font-body()
+  height $input-height
+  line-height $input-height
+  outline none
+  padding 0
+  position relative
+  width 100%
+  z-index 1
+
+  &:focus
+    border-bottom-width 3px
+    border-bottom-color $black
+
+input-error()
+  color $red
+  > .input
+  > .input:focus
+    border-bottom-color $red
+    color $red
+
+input-placeholder()
+  color $gray
+  height $input-height
+  left 0
+  line-height $input-height
+  pointer-events none
+  position absolute
+  top $padding-top
+  transform translateY(0)
+  transform-origin 0 0
+  transition 450ms $easeOutCirc
+  z-index 2
+
+input-range-slider-thumb($size)
+  appearance none
+  background $black
+  border-radius $size
+  height $size
+  width $size
+
+input-range()
+  > .input
+    $size = 24px
+    height 0
+    margin unit($input-height/2, px) 0
+
+    &::-ms-thumb
+      input-range-slider-thumb($size)
+
+    &::-moz-slider-thumb
+      input-range-slider-thumb($size)
+
+    &::-webkit-slider-thumb
+      input-range-slider-thumb($size)
+
+input-textarea()
+  height auto
+
+  > .input
+    height auto
+    line-height 1.5
+    padding-top 0.75em
+
+icon-prefix()
+  align-items center
+  display flex
+  height $input-height
+  justify-content center
+  left 0
+  position absolute
+  top $padding-top
+  width $icon-width
+
+  ~ .input
+    padding-left $icon-width
+
+  ~ .placeholder
+    left $icon-width
+
+.input-text
+  crisp-text()
+  font-body()
+  padding-top $padding-top
+  position relative
+
+  &.-range
+    input-range()
+
+  &.-error
+    input-error()
+
+  &.-textarea
+    input-textarea()
+
+  &.-disabled
+    opacity 0.5
+
+  > .input
+    input-field()
+
+  > .placeholder
+    input-placeholder()
+
+  > .icon-prefix
+    icon-prefix()
+
+  > .info
+    font-size 12px
+    padding 0.5em 0
+
+.input-text.-active:not(.-simple)
+  > .placeholder
+    font-size 14px
+    transform scale(0.9) translateY(-30%)
+    top 0
+    left 0
+
+.input-text.-simple.-active
+  > .placeholder
+    opacity 0

@@ -1,0 +1,44 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.app-modal
+  align-items center
+  bottom 0
+  crisp-text()
+  display flex
+  font-body(16px)
+  justify-content center
+  left 0
+  position fixed
+  right 0
+  top 0
+  z-index 9999
+
+  &.-full
+    > .inner
+      align-items center
+      display flex
+      height 100%
+      justify-content center
+      width 100%
+
+  &.-centered
+    > .inner
+      text-align center
+
+  &.-translucent
+    > .hotspot
+      background rgba($white, 0.8)
+
+  > .inner
+    position relative
+    z-index 3
+
+  > .hotspot
+    background $white
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 1

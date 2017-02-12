@@ -1,0 +1,72 @@
+@import '../colors'
+@import '../easing'
+
+.photo-gallery
+  $height = 360px
+
+  > .preview
+    align-items center
+    background $black
+    display flex
+    height $height
+    justify-content center
+    overflow hidden
+    position relative
+    user-select none
+
+    > .img
+      max-height 100%
+      pointer-events none
+      &.-loaded
+        animation 1s zoom-out $easeOutCirc
+
+    +mobile()
+      height 240px
+
+    > .arrow-left
+    > .arrow-right
+      align-items center
+      bottom 0
+      color $white
+      cursor pointer
+      display flex
+      font-size 2em
+      justify-content center
+      position absolute
+      top 0
+      transition 250ms
+      width 50%
+
+      &:not(:hover)
+        opacity 0
+
+    > .arrow-left
+      left 0
+
+    > .arrow-right
+      right 0
+
+
+  > .thumbnails
+    align-items center
+    display flex
+    justify-content center
+    bottom 0
+    left 0
+    right 0
+
+    > .dot
+      $size = 10px
+      background $lightgray
+      border-radius $size
+      height $size
+      width $size
+      margin 0.5em
+
+      &.-active
+        background $gray
+
+@keyframes zoom-out
+  from
+    transform scale(2)
+    opacity 0

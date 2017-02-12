@@ -1,0 +1,44 @@
+@import "../colors"
+@import "../mixins/typography"
+
+.select-box
+  $height = 38px
+  border 2px solid $black
+  crisp-text()
+  display inline-block
+  font-body(24px)
+  height $height
+  position relative
+
+  &.-active
+    > .arrow
+      color $black
+    > .input-select
+      color $black
+
+  > .input-select
+    appearance none
+    background none
+    border 0
+    border-radius 0
+    box-sizing border-box
+    color $gray
+    crisp-text()
+    font-body(18px)
+    height $height
+    line-height $height
+    padding 0 1em
+    padding-right 3em
+    width 100%
+
+  > .arrow
+    align-items center
+    color $gray
+    display flex
+    height $height
+    justify-content center
+    pointer-events none
+    position absolute
+    right 0
+    top 0
+    width $height

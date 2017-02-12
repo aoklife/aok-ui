@@ -1,0 +1,30 @@
+@import nib
+@import './animation'
+@import './colors'
+@import './components/*.styl'
+@import './font'
+
+html, body
+  height 100%
+  margin 0
+  padding 0
+
+  &.no-scroll
+    overflow hidden
+
+.hidden
+  display none
+  visibility hidden
+
+.link
+  color $black
+
+.disabled-layer
+  opacity 0.15
+  pointer-events none
+
+.color-red
+  color $red
+
+.color-green
+  color $green

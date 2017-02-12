@@ -1,0 +1,36 @@
+@import './easing'
+
+sequence($name)
+  > *
+    animation-duration 950ms
+    animation-fill-mode backwards
+    animation-name $name
+    animation-timing-function $easeOutCirc
+
+  for i in (0..20)
+    > *:nth-child({i})
+      animation-delay i * 50ms
+
+.sequence
+  sequence(slide-up)
+
+.sequence-slide-left
+  sequence(slide-left)
+
+.sequence-slide-down
+  sequence(slide-down)
+
+@keyframes slide-up
+  from
+    opacity 0
+    transform translateY(100px)
+
+@keyframes slide-down
+  from
+    opacity 0
+    transform translateY(-100px)
+
+@keyframes slide-left
+  from
+    opacity 0
+    transform translateX(100px)

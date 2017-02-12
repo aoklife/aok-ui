@@ -1,0 +1,23 @@
+@import "../colors"
+@import "../mixins/typography"
+@import "../mixins/media"
+
+.app-nav
+  crisp-text()
+  font-body()
+  display flex
+  align-items center
+
+  > .link
+    align-items center
+    color $black
+    display inline-flex
+    font-heavy(16px)
+    margin-right 1em
+    text-decoration none
+
+    +desktop()
+      margin-right 2em
+
+    > .ion-icon
+      font-size 2.5em

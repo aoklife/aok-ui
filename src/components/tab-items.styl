@@ -1,0 +1,21 @@
+@import "../colors"
+@import "../easing"
+@import "../mixins/typography"
+
+.tab-items
+  crisp-text()
+
+  > .tab-item
+    color $black
+    font-heavy(18px)
+    opacity 0.5
+    text-decoration none
+    transition 250ms $easeInOutCubic
+
+    &.active
+      opacity 1
+      font-size 28px
+
+    ~ .tab-item
+      margin-left 1em
+

@@ -1,0 +1,25 @@
+profile-avatar($size)
+  border-radius $size
+  height $size
+  width $size
+
+.profile-avatar
+  border 1px solid $gray
+  display inline-flex
+  overflow hidden
+  profile-avatar(48px)
+
+  &.-prefix
+    margin-right 10px
+
+  &.-suffix
+    margin-left 10px
+
+  &.-small
+    profile-avatar(36px)
+
+  &.-big
+    profile-avatar(64px)
+
+  > .img
+    width 100%

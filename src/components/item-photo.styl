@@ -1,0 +1,51 @@
+@import '../colors'
+@import '../mixins/typography'
+
+item-photo-size($size)
+  width $size
+
+  > .placeholder
+    width $size
+    height $size
+
+
+.item-photo
+  $size = 240px
+  crisp-text()
+  display inline-block
+  font-body()
+  item-photo-size(240px)
+
+  &.-small
+    item-photo-size(120px)
+
+  &.-full
+    height 100%
+    overflow hidden
+    width auto
+
+    > .img
+      height 100%
+      width auto
+
+  &.-square
+    height $size
+    overflow hidden
+    width $size
+    border 1px solid $gray
+
+  &.-thumbnail
+    $size = 80px
+    border 1px solid $gray
+    height $size
+    overflow hidden
+    width $size
+
+  > .img
+    width 100%
+
+  > .placeholder
+    align-items center
+    background $lightgray
+    display flex
+    justify-content center

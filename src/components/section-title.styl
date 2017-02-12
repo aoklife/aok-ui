@@ -1,0 +1,29 @@
+@import "../mixins/typography"
+
+.section-title
+  color $black
+  font-body(24px)
+  padding 1em 0 1em 0
+  text-decoration none
+
+  &.-compact
+    margin 0
+    padding 0
+    padding-bottom 1em
+
+  &.-bold
+    font-heavy(24px)
+    margin 0
+
+  &.-heavy
+    font-heavy(42px)
+    padding 1em 0
+    padding-bottom 0.5em
+
+  &.-padless
+    padding 0
+
+  &.-small
+    font-size 16px
+    margin 0
+    padding 0

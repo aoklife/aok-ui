@@ -1,0 +1,18 @@
+@import '../easing'
+
+.loop-updown
+  animation updown 1s infinite alternate $easeInOutSine
+
+.loop-updown-shadow
+  animation updown-shadow 1s infinite alternate $easeInOutSine
+  opacity 0.1
+
+@keyframes updown
+  from
+    transform translateY(-10%)
+
+@keyframes updown-shadow
+  from
+    transform translateY(10%) scaleY(-1)
+  to
+    transform translateY(0%) scaleY(-1)

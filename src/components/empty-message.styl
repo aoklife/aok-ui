@@ -1,0 +1,18 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.empty-message
+  align-items center
+  crisp-text()
+  display flex
+  flex-direction column
+  font-body()
+  height 360px
+  justify-content center
+  text-align center
+
+  > .text
+    color $gray
+
+  > .buttons
+    margin 1em 0

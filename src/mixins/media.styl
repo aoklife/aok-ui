@@ -1,0 +1,15 @@
+@import '../vars'
+
+$desktop-width = 800px
+
+desktop()
+  @media (min-width: $desktop-width)
+    {block}
+
+mobile()
+  @media (max-width: $desktop-width)
+    {block}
+
+mobile-small()
+  @media (max-width: 350px)
+    {block}

@@ -1,0 +1,21 @@
+desktop-grid-dual()
+  > .grid:nth-child(1)
+    width 33%
+
+  > .grid:nth-child(2)
+    width 66%
+
++desktop()
+  .desktop-grid
+    display flex
+    flex-wrap wrap
+    margin auto
+    max-width 1024px
+
+    > .grid
+      box-sizing border-box
+      width 100%
+      padding 0 1em
+
+    &.-dual
+      desktop-grid-dual()

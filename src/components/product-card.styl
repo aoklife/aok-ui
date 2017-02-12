@@ -1,0 +1,22 @@
+.product-card
+  display flex
+  width 100%
+  padding 2em 0
+
+  .item-photo
+    flex-shrink 0
+    width 200px
+
+  ~ .product-card
+    border-top 1px solid $lightgray
+
+  > .product-info
+    flex-grow 1
+    margin-left 1.5em
+
+  > .product-actions
+    text-align right
+    width 180px
+
+    > .section-title ~ .action-list
+      margin-top 1em

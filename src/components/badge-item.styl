@@ -1,0 +1,16 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.badge-item
+  $height = 28px
+  align-items center
+  border 2px solid $black
+  crisp-text()
+  display inline-flex
+  font-body()
+  height $height
+  padding 0 1em
+
+  &.-active
+    background $black
+    color $white
