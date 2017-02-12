@@ -5,9 +5,8 @@ item-photo-size($size)
   width $size
 
   > .placeholder
-    width $size
     height $size
-
+    width $size
 
 .item-photo
   $size = 240px
@@ -29,10 +28,10 @@ item-photo-size($size)
       width auto
 
   &.-square
+    border 1px solid $gray
     height $size
     overflow hidden
     width $size
-    border 1px solid $gray
 
   &.-thumbnail
     $size = 80px

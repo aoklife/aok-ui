@@ -21,7 +21,7 @@ button()
   display inline-flex
   font-heavy()
   justify-content center
-  outline none
+  outline 0
   padding 0 1.25em
   text-align center
   transition 250ms
@@ -33,16 +33,16 @@ button()
     width 100%
 
   &.-disabled
-    opacity 0.5
     border-color $gray
+    opacity 0.5
 
   &:hover:not(.-disabled)
     background $black
     color $white
 
   &.-big
-    button-size(24px, 48px)
     border-width 2px
+    button-size(24px, 48px)
 
   &.-inverted
     background $black
