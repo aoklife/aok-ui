@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "stylus --compress src/app.styl --out dist/ --include nib/lib"
+    "build": "stylus --compress src/app.styl --out dist/ --include nib/lib",
+    "lint": "stylint src",
+    "start": "gulp"
   },
   "author": "James O. Florentino <jamesflorentino@gmail.com> (http://jamesflorentino.com/)",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "eslint": "3.15.0",
+    "gulp": "3.9.1",
+    "gulp-shell": "0.5.2",
+    "gulp-stylus": "2.6.0",
     "nib": "1.1.2",
-    "stylus": "0.54.5"
+    "stylint": "1.5.9"
   }
 }
