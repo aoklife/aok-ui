@@ -1,3 +1,115 @@
+/*
+TableView
+
+Awesome way to display tabular data
+
+Markup:
+<div class="table-view">
+  <div class="table-row">
+    <div class="label">Full name</div>
+    <div class="value">John Doe</div>
+  </div>
+  <div class="table-row">
+    <div class="label">Occupation</div>
+    <div class="value">Designer</div>
+  </div>
+</div>
+
+Style guide: components.table-view
+*/
+
+/*
+TableView with icons
+
+Display table-view with icons
+
+Markup:
+<div class="table-view">
+  <div class="table-row">
+    <div class="icon ion-ios-pricetag"></div>
+    <div class="label">Price</div>
+    <div class="value">$ 1,200.00</div>
+  </div>
+  <div class="table-row">
+    <div class="icon ion-ios-heart"></div>
+    <div class="label">Raised</div>
+    <div class="value">$1,500.00</div>
+  </div>
+
+</div>
+
+Style guide: components.table-view.1
+*/
+
+
+/*
+TableView with subtitle
+
+Display table-view with icons
+
+Markup:
+<div class="table-view">
+  <div class="table-row">
+    <div class="label">
+      <div class="title">Account Settings</div>
+      <div class="subtitle">Edit Profile, Change password, etc.</div>
+    </div>
+    <div class="icon ion-ios-arrow-right"></div>
+  </div>
+  <div class="table-row">
+    <div class="label">
+      <div class="title">Preferences</div>
+      <div class="subtitle">Notifications, Privacy, etc.</div>
+    </div>
+    <div class="icon ion-ios-arrow-right"></div>
+  </div>
+  <div class="table-row">
+    <div class="label">
+      <div class="title">Edit Profile</div>
+      <div class="subtitle">Name, Profile Photo, etc.</div>
+    </div>
+    <div class="icon ion-ios-checkmark color-green"></div>
+  </div>
+</div>
+
+Style guide: components.table-view.2
+*/
+
+/*
+TableView with icons & subtitle
+
+Display table-view with icons
+
+Markup:
+<div class="table-view">
+  <div class="table-row">
+    <div class="icon ion-ios-person"></div>
+    <div class="label">
+      <div class="title">Account Settings</div>
+      <div class="subtitle">Edit Profile, Change password, etc.</div>
+    </div>
+    <div class="icon ion-ios-arrow-right"></div>
+  </div>
+  <div class="table-row">
+    <div class="icon ion-ios-cog"></div>
+    <div class="label">
+      <div class="title">Preferences</div>
+      <div class="subtitle">Notifications, Privacy, etc.</div>
+    </div>
+    <div class="icon ion-ios-heart color-red"></div>
+  </div>
+  <div class="table-row">
+    <div class="icon ion-ios-color-wand"></div>
+    <div class="label">
+      <div class="title">Edit Profile</div>
+      <div class="subtitle">Name, Profile Photo, etc.</div>
+    </div>
+    <div class="icon ion-ios-checkmark color-green"></div>
+  </div>
+</div>
+
+Style guide: components.table-view.3
+*/
 @import '../colors'
 @import '../mixins/typography'
 
@@ -6,18 +118,14 @@ $row-height = 48px
 table-row-icon()
   align-items center
   display flex
+  font-size 24px
   height $row-height
   justify-content center
   width unit($row-height * 2/3, px)
 
-  > .ion-icon
-    font-size 24px
-
   ~ .label
     padding-left 12px
 
-  &:last-child
-    color $gray
 
 center-content()
   align-items center
@@ -33,6 +141,9 @@ center-content()
   ~ .table-row > .value
   ~ .table-row > .icon:last-child
     border-top 1px solid $lightgray
+
+  > .icon
+    table-row-icon()
 
   > .label
   > .value

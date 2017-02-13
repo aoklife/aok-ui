@@ -37,10 +37,11 @@ const cdnurl = 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionico
 gulp.task('docs', shell.task([`kss --source src --destination docs --css "/tmp/app.css" --css "${cdnurl}"`]))
 
 gulp.task('watch', function() {
-  gulp.watch(paths.stylusAll, ['lint', 'stylus', 'docs'])
+  gulp.watch(paths.stylusAll, ['lint', 'stylus', 'docs', 'build'])
 })
 
 gulp.task('default', [
+  'connect',
   'connect',
   'copy',
   'lint',

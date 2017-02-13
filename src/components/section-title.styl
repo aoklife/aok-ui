@@ -1,4 +1,34 @@
+/*
+SectionTitle
+
+A generic title display for a section
+
+.-bold - Bold
+.-heavy - Heavy
+
+Markup:
+<div class="section-title {{modifier_class}}">
+  Acts of Kindness
+</div>
+
+Style guide: components.section-title
+
+*/
 @import "../mixins/typography"
+
+section-title-compact()
+  margin 0
+  padding 0
+  padding-bottom 1em
+
+section-title-bold()
+  font-heavy(24px)
+  margin 0
+
+section-title-heavy()
+  font-heavy(42px)
+  padding 1em 0
+  padding-bottom 0.5em
 
 .section-title
   color $black
@@ -7,18 +37,13 @@
   text-decoration none
 
   &.-compact
-    margin 0
-    padding 0
-    padding-bottom 1em
+    section-title-compact()
 
   &.-bold
-    font-heavy(24px)
-    margin 0
+    section-title-bold()
 
   &.-heavy
-    font-heavy(42px)
-    padding 1em 0
-    padding-bottom 0.5em
+    section-title-heavy()
 
   &.-padless
     padding 0
