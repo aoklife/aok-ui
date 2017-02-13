@@ -1,12 +1,13 @@
+const connect = require('gulp-connect')
 const gulp = require('gulp')
 const nib = require('nib')
 const shell = require('gulp-shell')
 const stylus = require('gulp-stylus')
-const connect = require('gulp-connect')
 
 const paths = {
   stylusAll: ['./src/**/*.styl'],
   stylusEntry: ['./src/app.styl'],
+  fonts: ['./dist/fonts/*.otf'],
 }
 
 gulp.task('connect', function() {
@@ -25,6 +26,11 @@ gulp.task('build', function() {
     .pipe(gulp.dest('./dist'))
 })
 
+gulp.task('copy', function() {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest('./tmp/fonts'))
+})
+
 gulp.task('lint', shell.task(['stylint src']))
 
 const cdnurl = 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css'
@@ -34,4 +40,11 @@ gulp.task('watch', function() {
   gulp.watch(paths.stylusAll, ['lint', 'stylus', 'docs'])
 })
 
-gulp.task('default', ['connect', 'lint', 'stylus', 'docs', 'watch'])
+gulp.task('default', [
+  'connect',
+  'copy',
+  'lint',
+  'stylus',
+  'docs',
+  'watch',
+])
