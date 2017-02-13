@@ -1,9 +1,10 @@
-@import './animation'
-@import './colors'
-@import './components/*.styl'
-@import './font'
+.aok-ui
+  @import './animation'
+  @import './colors'
+  @import './components/*.styl'
+  @import './font'
 
-html, body
+html.aok-ui
   height 100%
   margin 0
   padding 0
@@ -11,19 +12,19 @@ html, body
   &.no-scroll
     overflow hidden
 
-.hidden
-  display none
-  visibility hidden
+  .hidden
+    display none
+    visibility hidden
 
-.link
-  color $black
+  .link
+    color $black
 
-.disabled-layer
-  opacity 0.15
-  pointer-events none
+  .disabled-layer
+    opacity 0.15
+    pointer-events none
 
-.color-red
-  color $red
+  .color-red
+    color $red
 
-.color-green
-  color $green
+  .color-green
+    color $green
