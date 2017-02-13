@@ -1,3 +1,21 @@
+/*
+InputText
+
+.-error - has errors
+.-prefix - has prefix
+.-active - active
+
+
+Markup:
+<div class="input-text {{modifier_class}}">
+  <div class="icon-prefix ion-ion ion-ios-person"></div>
+  <input type="text" class="input"  name="">
+  <div class="placeholder">Search</div>
+</div>
+
+Style guide: components.input-text
+*/
+
 @import '../colors'
 @import '../easing'
 @import '../vars'
@@ -100,6 +118,9 @@ icon-prefix()
   padding-top $padding-top
   position relative
 
+  ~ .input-text
+    margin-top 1em
+
   &.-range
     input-range()
 
@@ -125,12 +146,11 @@ icon-prefix()
     font-size 12px
     padding 0.5em 0
 
-.input-text.-active:not(.-simple)
-  > .placeholder
-    font-size 14px
-    left 0
-    top 0
-    transform scale(0.9) translateY(-30%)
+.input-text.-active:not(.-simple) > .placeholder
+  font-size 14px
+  left 0
+  top 0
+  transform scale(0.9) translateY(-30%)
 
 .input-text.-simple.-active
   > .placeholder
