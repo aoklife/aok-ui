@@ -3,6 +3,7 @@ const gulp = require('gulp')
 const nib = require('nib')
 const shell = require('gulp-shell')
 const stylus = require('gulp-stylus')
+const kss = require('kss')
 
 const paths = {
   stylusAll: ['./src/**/*.styl'],
@@ -11,13 +12,16 @@ const paths = {
 }
 
 gulp.task('connect', function() {
-  connect.server({ port: 4000 })
+  connect.server({
+    port: 4000,
+    root: 'docs',
+  })
 })
 
 gulp.task('stylus', function() {
   return gulp.src(paths.stylusEntry)
     .pipe(stylus({ use: nib() }))
-    .pipe(gulp.dest('./tmp'))
+    .pipe(gulp.dest('./docs'))
 })
 
 gulp.task('build', function() {
@@ -33,15 +37,23 @@ gulp.task('copy', function() {
 
 gulp.task('lint', shell.task(['stylint src']))
 
-const cdnurl = 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css'
-gulp.task('docs', shell.task([`kss --source src --destination docs --css "/tmp/app.css" --css "${cdnurl}"`]))
+gulp.task('docs', function() {
+  return kss({
+    builder: 'template',
+    css: [
+      'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css',
+      'app.css',
+    ],
+    destination: 'docs',
+    source: 'src',
+  })
+})
 
 gulp.task('watch', function() {
-  gulp.watch(paths.stylusAll, ['lint', 'stylus', 'docs', 'build'])
+  gulp.watch(paths.stylusAll, ['lint', 'stylus', 'docs'])
 })
 
 gulp.task('default', [
-  'connect',
   'connect',
   'copy',
   'lint',
