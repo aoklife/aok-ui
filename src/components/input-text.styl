@@ -50,14 +50,14 @@ input-field()
   border-radius 0
   box-sizing border-box
   crisp-text()
-  font-body()
+  font-bold()
   height $input-height
   line-height $input-height
   outline 0
   padding 0
   position relative
   width 100%
-  z-index 1
+  z-index 2
 
   &:focus
     border-bottom-color $black
@@ -80,7 +80,7 @@ input-placeholder()
   transform translateY(0)
   transform-origin 0 0
   transition 450ms $easeOutCirc
-  z-index 2
+  z-index 1
 
 input-range-slider-thumb($size)
   appearance none
