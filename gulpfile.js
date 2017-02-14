@@ -8,7 +8,7 @@ const kss = require('kss')
 const paths = {
   stylusAll: ['./src/**/*.styl'],
   stylusEntry: ['./src/app.styl'],
-  fonts: ['./dist/fonts/*.otf'],
+  fonts: ['./fonts/*.otf'],
 }
 
 gulp.task('connect', function() {
@@ -32,7 +32,7 @@ gulp.task('build', function() {
 
 gulp.task('copy', function() {
   return gulp.src(paths.fonts)
-    .pipe(gulp.dest('./tmp/fonts'))
+    .pipe(gulp.dest('./docs/fonts'))
 })
 
 gulp.task('lint', shell.task(['stylint src']))
