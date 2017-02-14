@@ -1,22 +1,30 @@
+/*
+LinkText
+
+For hyperlinks
+
+.-centered - horizontal block
+.-button - display as a button
+.-strong - display in bold
+.-white - white color
+
+Markup:
+<div class="link-text {{modifier_class}}">Link Text</div>
+
+Style guide: components.link-text
+
+*/
 @import '../colors'
 @import '../vars'
 @import '../mixins/typography'
 
 .link-text
+  color $black
+  crisp-text()
   cursor pointer
   display inline-block
-
-  > .text
-    background none
-    border 0
-    color $gray
-    font-body()
-    outline 0
-    padding 0
-
-  &.-black
-    > .link-button
-      color $black
+  font-bold()
+  text-decoration none
 
   &.-centered
     display block
@@ -29,9 +37,7 @@
     padding 1em 2em
 
   &.-strong
-    > .link-button
-      font-weight $medium-font-weight
+    font-weight $medium-font-weight
 
   &.-white
-    > .link-button
-      color $white
+    color $white
