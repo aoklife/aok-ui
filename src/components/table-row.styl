@@ -1,0 +1,53 @@
+@import '../colors'
+@import '../mixins/typography'
+
+$row-height = 48px
+
+center-content()
+  align-items center
+  display flex
+  justify-content center
+
+table-row-icon()
+  align-items center
+  display flex
+  font-size 24px
+  height $row-height
+  justify-content center
+  width unit($row-height * 2/3, px)
+
+  ~ .label
+    padding-left 12px
+
+.table-row
+  align-items stretch
+  background $white
+  display flex
+  height $row-height
+
+  > .icon
+    table-row-icon()
+
+  > .label
+  > .value
+    display flex
+    flex-direction column
+    font-body(1em)
+    height $row-height
+    justify-content center
+
+    > .subtitle
+      color $gray
+      display block
+      font-size 0.66em
+      width 100%
+
+  > .label
+    flex-grow 1
+
+  > .value
+    text-align right
+
+    ~ .value
+      margin-left 1em
+

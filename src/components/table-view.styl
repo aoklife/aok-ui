@@ -110,60 +110,16 @@ Markup:
 
 Style guide: components.table-view.3
 */
+
 @import '../colors'
 @import '../mixins/typography'
 
-$row-height = 48px
+.table-view
+  crisp-text()
+  font-body()
 
-table-row-icon()
-  align-items center
-  display flex
-  font-size 24px
-  height $row-height
-  justify-content center
-  width unit($row-height * 2/3, px)
-
-  ~ .label
-    padding-left 12px
-
-
-center-content()
-  align-items center
-  display flex
-  justify-content center
-
-.table-row
-  align-items stretch
-  display flex
-  height $row-height
-
-  ~ .table-row > .label
-  ~ .table-row > .value
-  ~ .table-row > .icon:last-child
-    border-top 1px solid $lightgray
-
-  > .icon
-    table-row-icon()
-
-  > .label
-  > .value
-    display flex
-    flex-direction column
-    font-body(1em)
-    height $row-height
-    justify-content center
-
-    > .subtitle
-      color $gray
-      display block
-      font-size 0.66em
-      width 100%
-
-  > .label
-    flex-grow 1
-
-  > .value
-    text-align right
-
-    ~ .value
-      margin-left 1em
+  > .table-row
+    ~ .table-row > .label
+    ~ .table-row > .value
+    ~ .table-row > .icon:last-child
+      border-top 1px solid $lightgray
