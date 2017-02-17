@@ -1,0 +1,29 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.input-checkbox
+  align-items center
+  crisp-text()
+  display inline-flex
+  font-body()
+
+  > .checkbox
+    display none
+
+    &:checked ~ .icon
+      background $black
+
+  > .icon
+    $size = 14px
+    appearance none
+    border 1px solid $black
+    border-radius $size
+    box-sizing border-box
+    display inline-block
+    flex-grow 0
+    flex-shrink 0
+    height $size
+    width $size
+
+    ~ .label
+      margin-left 10px
