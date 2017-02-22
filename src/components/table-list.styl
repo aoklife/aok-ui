@@ -1,0 +1,16 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.table-list
+  border-collapse collapse
+  crisp-text()
+  font-body()
+  width 100%
+
+  th
+  td
+    padding 0.25em
+    text-align left
+
+  tr ~ tr
+    border-top 1px solid $lightgray
