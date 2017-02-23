@@ -33,6 +33,7 @@ item-photo-size($size)
   display inline-flex
   font-body()
   item-photo-size(240px)
+  position relative
 
   &.-small
     item-photo-size(120px)
@@ -70,3 +71,17 @@ item-photo-size($size)
     background $lightgray
     display flex
     justify-content center
+
+  > .close-btn
+    $size = 30px
+    border-radius $size
+    color $white
+    cursor pointer
+    height $size
+    line-height $size
+    margin 10px
+    position absolute
+    right 0
+    text-align center
+    top 0
+    width $size
