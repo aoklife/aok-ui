@@ -1,21 +1,36 @@
+@import '../colors'
+@import '../mixins/media'
+@import '../mixins/typography'
+
 .product-card
-  display flex
   padding 2em 0
   width 100%
 
+  +desktop()
+    align-items stretch
+    display flex
+
   > .item-photo
     flex-shrink 0
+
+    +mobile()
+      width 100%
 
   ~ .product-card
     border-top 1px solid $lightgray
 
   > .product-info
     flex-grow 1
-    margin-left 1.5em
+    margin 1em 0
+
+    +desktop()
+      margin-left 1.5em
 
   > .product-actions
-    text-align right
-    width 180px
+    +desktop()
+      flex-shrink 0
+      text-align right
+      min-width 140px
 
     > .section-title ~ .action-list
       margin-top 1em
