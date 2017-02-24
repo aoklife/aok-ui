@@ -21,7 +21,9 @@
 
   > .product-info
     flex-grow 1
-    margin 1em 0
+
+    +mobile()
+      margin 1em 0
 
     +desktop()
       margin-left 1.5em
@@ -30,7 +32,7 @@
     +desktop()
       flex-shrink 0
       text-align right
-      min-width 140px
+      min-width 240px
 
     > .section-title ~ .action-list
       margin-top 1em
