@@ -1,3 +1,6 @@
+desktop-grid-narrow()
+  max-width 800px
+
 desktop-grid-dual()
   > .grid:nth-child(1)
     width 33%
@@ -19,3 +22,6 @@ desktop-grid-dual()
 
     &.-dual
       desktop-grid-dual()
+
+    &.-narrow
+      desktop-grid-narrow()
