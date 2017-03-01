@@ -4,5 +4,20 @@
   background $white
   height 360px
   overflow hidden
+  position relative
+
+  > .btn-edit
+    margin 1em
+    position absolute
+    right 0
+    top 0
+    z-index 2
+    opacity 0.5
+
+    &:hover
+      opacity 1
+
   > .img
+    position relative
     width 100%
+    z-index 1
