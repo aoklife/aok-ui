@@ -7,6 +7,9 @@
   flex-direction column
   margin-bottom 1em
 
+  +mobile()
+    margin 0 1em
+
   > .title
     color $black
     flex-grow 0
@@ -14,7 +17,7 @@
     text-decoration none
 
   > .title ~ .description
-    margin-top 0.5em
+    margin-top 1em
     flex-grow 0
 
   > .description
@@ -22,5 +25,6 @@
     flex-grow 1
     font-body(14px)
 
+  > .description ~ .description
   > .description ~ .title
     margin-top 0.5em

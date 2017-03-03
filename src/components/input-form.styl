@@ -3,10 +3,13 @@
 
 .input-form
   box-sizing border-box
-  max-width 480px
-  min-width 480px
   text-align left
-  width 100%
+
+  +desktop()
+    width 480px
+
+  +mobile()
+    margin 0 1em
 
   ~ .input-form
     margin-top 1em
