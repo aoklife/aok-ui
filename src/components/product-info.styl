@@ -9,15 +9,18 @@
 
   > .title
     color $black
-    font-heavy(24px)
-    text-decoration none
     flex-grow 0
+    font-heavy(16px)
+    text-decoration none
 
   > .title ~ .description
-    margin-top 4px
+    margin-top 0.5em
     flex-grow 0
 
   > .description
     color $gray
     flex-grow 1
     font-body(14px)
+
+  > .description ~ .title
+    margin-top 0.5em

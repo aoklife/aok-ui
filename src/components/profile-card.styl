@@ -5,11 +5,17 @@ $profile-card-height = 72px
 .profile-card
   align-items center
   display flex
-  height $profile-card-height
+  margin 1em 0
+
+  &.-portrait
+    flex-direction column
+    text-align center
+
+    > .photo ~ .body
+      margin-top 0.5em
 
   > .body
     align-items center
     display flex
     flex-grow 1
-    height $profile-card-height
     padding 0 1em

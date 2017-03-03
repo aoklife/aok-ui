@@ -1,0 +1,35 @@
+@import '../colors'
+@import '../mixins/typography'
+
+.hr-title
+  align-items center
+  color $gray
+  crisp-text()
+  display flex
+  font-family 'Times', sans-serif
+  font-size 14px
+  font-style italic
+  justify-content center
+  margin 1em 0
+  width 100%
+
+  &.-spaceous
+    margin 2em 0
+
+  > .text
+    flex-grow 1
+    white-space nowrap
+
+  &:before
+  &:after
+    background $lightgray
+    content ""
+    display block
+    height 1px
+    width 100%
+
+  &:before
+    margin-right 1em
+
+  &:after
+    margin-left 1em
