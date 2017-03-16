@@ -1,0 +1,19 @@
+@import "../colors"
+@import "../mixins/typography"
+@import "../mixins/media"
+
+.app-panel
+  background $white
+  color $black
+  font-body()
+
+  > .panel-item
+    box-sizing border-box
+    padding 1em 2em
+
+  +desktop()
+    &.-dual
+      display flex
+
+      > .panel-item
+        width 50%
