@@ -47,7 +47,10 @@ Style guide: components.app-modal
     z-index 3
 
     +desktop()
-      min-width 960px
+      min-width $desktop-width
+
+    +mobile()
+      width 100%
 
   > .hotspot
     background $white
