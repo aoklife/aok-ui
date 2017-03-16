@@ -19,19 +19,23 @@ Style guide: components.link-text
 @import '../mixins/typography'
 
 .link-text
-  color $black
+  color $gray
   crisp-text()
   cursor pointer
   display inline-block
-  font-bold()
+  font-body()
   text-decoration none
+
+  > .link
+    color $cyan
+    text-decoration none
 
   &.-centered
     display block
     text-align center
 
   &.-padded
-    padding-top 1em
+    padding 1em 0
 
   &.-button
     padding 1em 2em
