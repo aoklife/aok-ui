@@ -83,6 +83,7 @@ button()
 
   &.-small
     button-size(14px, 28px)
+    padding 0 1.25em
 
   &.-inverted
     background $black
@@ -100,6 +101,11 @@ button()
 
     &:last-child
       margin-left 0.25em
+
+  &.-outlined
+    background transparent
+    border-color $white
+    color $white
 
 .input-button
   button()
