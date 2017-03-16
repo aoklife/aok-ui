@@ -43,6 +43,7 @@ Style guide: components.app-modal
     background rgba($white, 0.8)
 
   > .inner
+    box-sizing border-box
     position relative
     z-index 3
 
@@ -50,6 +51,7 @@ Style guide: components.app-modal
       min-width $desktop-width
 
     +mobile()
+      padding 0 1em
       width 100%
 
   > .hotspot
