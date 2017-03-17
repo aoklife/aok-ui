@@ -1,21 +1,33 @@
 @import "../colors"
 @import "../easing"
 @import "../mixins/typography"
+@import "../mixins/reset-link"
+
+$tab-item-height = 36px
 
 .tab-items
   crisp-text()
+  display flex
+  justify-content stretch
 
   > .tab-item
-    color $black
-    font-heavy(18px)
-    opacity 0.5
-    text-decoration none
-    transition 250ms $easeInOutCubic
+    align-items center
+    background $white
+    border 1px solid $lightgray
+    display flex
+    font-body()
+    height $tab-item-height
+    justify-content center
+    padding 0 1.5em
+    reset-link($gray)
+    text-align center
 
     &.active
-      font-size 28px
-      opacity 1
+      background $black
+      color $white
+
+    &:hover:not(.active)
+      background $lightgray
 
     ~ .tab-item
-      margin-left 1em
-
+      margin-left 1px
