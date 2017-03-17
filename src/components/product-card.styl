@@ -3,15 +3,25 @@
 @import '../mixins/typography'
 
 .product-card
-  padding 2em 0
+  background $white
+  padding 1.25em
   width 100%
+
+  &:hover
+    background-color lightness($lightgray, 95%)
 
   +desktop()
     align-items stretch
     display flex
 
-  > .item-photo
+  > .photo
+    $photo-size = 180px
     flex-shrink 0
+    overflow hidden
+    width $photo-size
+
+    > .img
+      width $photo-size
 
     +mobile()
       width 100%
