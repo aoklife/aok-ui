@@ -1,0 +1,20 @@
+$thumbnail-size = 120px
+
+.photo-gallery-preview
+  display flex
+  width 100%
+
+  > .primary
+    box-sizing border-box
+    padding-right 1em
+    flex-grow 1
+
+  > .primary > .img
+    width 100%
+
+  > .thumbnails
+    flex-shrink 0
+    width $thumbnail-size
+
+    > .thumb ~ .thumb
+      margin-top 5px

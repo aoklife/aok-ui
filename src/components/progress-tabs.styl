@@ -1,0 +1,47 @@
+@import "../mixins/typography"
+
+$progress-tab-height = 48px
+$progress-tab-counter-size = 28px
+
+.progress-tabs
+  align-items center
+  display flex
+  font-body()
+  height $progress-tab-height
+  counter-reset section
+
+  > .tab-item
+    align-items center
+    display inline-flex
+    height $progress-tab-height
+    padding 0 1em
+
+    &:before
+      background $white
+      border 1px solid $gray
+      border-radius $progress-tab-counter-size
+      color $black
+      content counter(section)
+      counter-increment section
+      display inline-block
+      height $progress-tab-counter-size
+      line-height $progress-tab-counter-size + 3px
+      margin-right 12px
+      text-align center
+      width $progress-tab-counter-size
+
+    &.-active:before
+    &.active:before
+      background $black
+      border-color $black
+      color $white
+
+    &.-success
+      color $cyan
+
+    &.-success:before
+      background $cyan
+      border-color $cyan
+      color $white
+      content "\f3fd"
+      font-family "Ionicons"

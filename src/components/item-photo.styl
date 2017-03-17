@@ -28,7 +28,7 @@ item-photo-size($size)
 .item-photo
   $size = 240px
   align-items center
-  background black
+  background $lightgray
   crisp-text()
   display inline-flex
   font-body()
@@ -40,6 +40,9 @@ item-photo-size($size)
 
   &.-mini
     item-photo-size(80px)
+
+  &.-block
+    width 100%
 
   &.-full
     height 100%

@@ -1,0 +1,25 @@
+@import "../colors"
+@import "../mixins/typography"
+@import "./photo-gallery-preview"
+
+.upload-button
+  align-items center
+  border 1px dashed $lightgray
+  border-radius 5px
+  box-sizing border-box
+  color $gray
+  cursor pointer
+  display flex
+  flex-direction column
+  font-body(14px)
+  height $thumbnail-size
+  justify-content center
+  padding 0 1em
+  text-align center
+  width $thumbnail-size
+
+  > input[type="file"]
+    display none
+
+  > .icon
+    font-size 3em

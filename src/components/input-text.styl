@@ -38,7 +38,7 @@ Style guide: components.input-text.1
 @import '../vars'
 @import '../mixins/typography'
 
-$input-height = 28px
+$input-height = 48px
 $icon-width = 24px
 $padding-top = 14px
 
@@ -46,7 +46,7 @@ input-field()
   appearance none
   background transparent
   border 0 solid transparent
-  border-bottom 2px solid $gray
+  border-bottom 1px solid $gray
   border-radius 0
   box-sizing border-box
   crisp-text()
@@ -57,6 +57,7 @@ input-field()
   padding 0
   position relative
   width 100%
+  max-width 100%
   z-index 2
 
   &:focus
@@ -111,8 +112,11 @@ input-textarea()
   height auto
 
   > .input
+    box-sizing border-box
     height auto
     line-height 1.5
+    min-height $input-height
+    padding-top 1em
 
 icon-prefix()
   align-items center
