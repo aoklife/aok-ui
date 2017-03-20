@@ -18,6 +18,8 @@ Style guide: components.item-photo
 @import '../colors'
 @import '../mixins/typography'
 
+$item-photo-circle-size = 100px
+
 item-photo-size($size)
   width $size
 
@@ -34,6 +36,13 @@ item-photo-size($size)
   font-body()
   item-photo-size(240px)
   position relative
+
+  &.-circled
+    $size = $item-photo-circle-size
+    border-radius $size
+    height $size
+    overflow hidden
+    width $size
 
   &.-gallery
     background lightness($lightgray, 98%)
