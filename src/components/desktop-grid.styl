@@ -15,6 +15,12 @@ desktop-grid-dual()
     margin auto
     max-width 1024px
 
+    &.-padless
+      > .grid
+        padding 0
+      > .grid ~ .grid
+        padding-left 1em
+
     > .grid
       box-sizing border-box
       padding 0 1em

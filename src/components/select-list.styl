@@ -9,6 +9,23 @@ $select-list-max-height = 240px
   crisp-text()
   position relative
 
+  &.-focused > .input-text:after
+    content '\f3d2'
+
+  > .input-text
+    position relative
+
+    &:after
+      align-items center
+      bottom 0
+      color $gray
+      content '\f3d0'
+      display flex
+      font-family 'Ionicons'
+      height $input-height
+      position absolute
+      right 0
+
   > .remove-btn
     align-items center
     bottom 0
@@ -20,10 +37,13 @@ $select-list-max-height = 240px
     opacity 0
     position absolute
     right 0
-    z-index 2
+    z-index 3
 
     &:hover
       opacity 1
+
+    &:hover ~ .input-text:after
+      opacity 0
 
   &.-empty
     > .option-list > .option
@@ -42,7 +62,7 @@ $select-list-max-height = 240px
 .option-list
   background $white
   border 1px solid $lightgray
-  font-body(1em)
+  font-body()
 
   > .option
     align-items center
