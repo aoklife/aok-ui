@@ -7,6 +7,7 @@ $select-list-max-height = 240px
 
 .select-list
   crisp-text()
+  height $input-height
   position relative
 
   &.-focused > .input-text:after
@@ -56,7 +57,7 @@ $select-list-max-height = 240px
     overflow auto
     position absolute
     right 0
-    top 100%
+    top $input-height + 14px
     z-index 9
 
 .option-list
