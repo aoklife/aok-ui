@@ -7,21 +7,29 @@
   crisp-text()
   display flex
   font-body($font-size)
-  justify-content space-between
   margin 0
-  padding 1em 0
+  padding 2em 0
 
   > .item
     display inline
     margin 0
     padding 0
 
-    > .title
-      color $black
-      font-bold($font-size)
+  > .item ~ .item
+    margin-left 3em
 
-      ~ .value
-        margin-top 4px
+  > .item > .value
+  > .item > .title
+    display block
+
+  > .item > .title
+    font-bold()
+
+  > .item > .value
+    font-size 12px
+
+  > .item > .title ~ .value
+      margin-top 4px
 
   > .item > .ion-icon:first-child
     margin-right 5px

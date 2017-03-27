@@ -8,6 +8,13 @@ desktop-grid-dual()
   > .grid:nth-child(2)
     width 66%
 
+desktop-grid-dual-reversed()
+  > .grid:nth-child(1)
+    width 66%
+
+  > .grid:nth-child(2)
+    width 33%
+
 +desktop()
   .desktop-grid
     display flex
@@ -23,11 +30,13 @@ desktop-grid-dual()
 
     > .grid
       box-sizing border-box
-      padding 0 1em
       width 100%
 
     &.-dual
       desktop-grid-dual()
+
+    &.-reversed
+      desktop-grid-dual-reversed()
 
     &.-narrow
       desktop-grid-narrow()

@@ -35,7 +35,6 @@ item-photo-size($size)
   display inline-flex
   font-body()
   item-photo-size(240px)
-  position relative
 
   &.-circled
     $size = $item-photo-circle-size
@@ -48,6 +47,10 @@ item-photo-size($size)
     background lightness($lightgray, 98%)
     border 1px solid $lightgray
     padding 2em
+    position relative
+
+    ~ .item-photo.-gallery
+      margin-top 1em
 
   &.-small
     item-photo-size(120px)

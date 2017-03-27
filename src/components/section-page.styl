@@ -2,6 +2,9 @@
 @import '../mixins/typography'
 
 .section-page
+  ~ .section-page
+    border-top 1px solid $lightgray
+
   > .container
     crisp-text()
     font-body()
