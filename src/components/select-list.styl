@@ -7,11 +7,8 @@ $select-list-max-height = 240px
 
 .select-list
   crisp-text()
-  height $input-height
+  min-height $input-height
   position relative
-
-  ~ .input-text
-    margin-top 3em
 
   &.-focused > .input-text:after
     content '\f3d2'

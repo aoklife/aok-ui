@@ -11,7 +11,7 @@ input-group-inline()
 
     ~ .select-list
     ~ .input-text
-      margin 0 0 0 1em
+      margin-left 1em
 
 .input-group
   &.-centered
@@ -24,13 +24,36 @@ input-group-inline()
   &.-right
     text-align right
 
-  ~ .input-group
-    margin-top 1em
-
   > .input-text
   > .input-button
   > .input-checkbox
+  > .select-list
     margin-bottom 1em
 
+  &.-dual
+    align-items center
+    display flex
+    width 100%
+    flex-wrap wrap
+
+    > .input-text
+    > .input-button
+    > .input-checkbox
+    > .select-list
+      margin 0
+
+    >:nth-child(1n)
+      box-sizing border-box
+      width 33.33%
+      margin-bottom 1em
+
+    >:nth-child(2n)
+      box-sizing border-box
+      flex-grow 1
+      margin-left 1em
+      margin-bottom 1em
+
   +mobile()
-    margin 0 1em
+    &:not(.-padless)
+      padding-left 1em
+      padding-right 1em

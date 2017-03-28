@@ -137,12 +137,7 @@ icon-prefix()
 .input-text
   crisp-text()
   font-body()
-  padding-top $padding-top
   position relative
-
-  ~ .input-text
-  ~ .select-list
-    margin-top 1em
 
   &.-range
     input-range()
@@ -160,6 +155,7 @@ icon-prefix()
 
   > .input
     input-field()
+    margin-top $padding-top
 
   > .placeholder
     input-placeholder()
