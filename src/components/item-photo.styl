@@ -36,6 +36,7 @@ item-photo-size($size)
   display inline-flex
   font-body()
   item-photo-size(240px)
+  position relative
 
   &.-circled
     $size = $item-photo-circle-size
@@ -98,6 +99,7 @@ item-photo-size($size)
     border-radius $size
     color $white
     cursor pointer
+    font-size 24px
     height $size
     line-height $size
     margin 10px
@@ -106,3 +108,6 @@ item-photo-size($size)
     text-align center
     top 0
     width $size
+
+    > .ion-icon
+      text-shadow 0 0 1px $black
