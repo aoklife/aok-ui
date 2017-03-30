@@ -2,8 +2,8 @@
 @import '../mixins/typography'
 
 .status-badge
-  background $black
-  color $white
+  border 1px solid $black
+  color $black
   crisp-text()
   display inline-block
   font-family(12px)
@@ -13,3 +13,8 @@
   &.-active
     background $black
     color $white
+
+  &.-small
+    border-radius 3px
+    font-size 12px
+    padding 5px 8px
