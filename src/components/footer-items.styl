@@ -3,17 +3,26 @@
 
 .footer-items
   $font-size = 14px
-  color $gray
+  color $black
   crisp-text()
   display flex
   font-body($font-size)
   margin 0
   padding 2em 0
 
+  &.-mini
+    padding 1em 0
+
+  ~ .footer-items
+    border-top 1px solid $lightgray
+
   > .item
     display inline
     margin 0
     padding 0
+
+    &.-disabled
+      color $gray
 
   > .item ~ .item
     margin-left 3em
@@ -23,6 +32,7 @@
     display block
 
   > .item > .title
+    color $black
     font-bold()
 
   > .item > .value
