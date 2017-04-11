@@ -4,7 +4,7 @@ InputButton
 Your standard button suitable for clicking.
 
 .-block - full width
-.-disabled - disabled
+.-disabled
 .-inverted - inverted
 :hover - Highlights when hovering.
 
@@ -59,7 +59,6 @@ button()
   text-align center
   text-decoration none
   transition 250ms
-  user-select none
   width auto
 
   button-size(16px, 36px)
@@ -110,3 +109,8 @@ button()
 
 .input-button
   button()
+  cursor pointer
+  user-select none
+
+  &.-disabled
+    cursor no-drop
